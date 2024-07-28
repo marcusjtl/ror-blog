@@ -3,6 +3,11 @@
 <% @articles.each do |article| %>
     <div>
     <h2> <%= link_to article.title, article %> </h2>
+    <% if article.draft? %>
+    <div class="p-2 rounded bg-gray-100 text-gray-900">Draft</div>
+    <% elsif article.scheduled? %>
+    <div class="p-2 rounded bg-blue-100 text-gray-900">Scheduled</div>
+    <% end %>
     <%= article.body %>
     </div>
 <% end %>
