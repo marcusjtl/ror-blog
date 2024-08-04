@@ -34,7 +34,7 @@ class ArticlesController < ApplicationController
         end
     end
 
-    def destory
+    def destroy
         @article.destroy
         redirect_to root_path
     end
